@@ -27,6 +27,11 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <AssemblyName>Terrapass.Debug</AssemblyName>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="cp ${TargetFile} ${SolutionDir}/ReleaseAssemblies/" workingdir="${TargetDir}" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

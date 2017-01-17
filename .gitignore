@@ -38,3 +38,6 @@ Thumbs.db
 
 #dotCover
 *.dotCover
+
+#Copied built release assemblies
+/ReleaseAssemblies/*.dll
