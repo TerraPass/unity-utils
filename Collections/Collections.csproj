@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D504B6D7-9371-4124-8A30-A365447DC4C4}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Collections</RootNamespace>
+    <RootNamespace>Terrapass.Collections</RootNamespace>
     <AssemblyName>Terrapass.Collections</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
