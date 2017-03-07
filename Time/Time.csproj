@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F574B218-9A05-4893-9D41-D78889B1273D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Time</RootNamespace>
+    <AssemblyName>Terrapass.Time</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="cp ${TargetFile} ${SolutionDir}/ReleaseAssemblies/" workingdir="${TargetDir}" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\..\opt\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\AlarmClock.cs" />
+    <Compile Include="Source\AlarmClockHelper.cs" />
+    <Compile Include="Source\CallbackAlarmClock.cs" />
+    <Compile Include="Source\EventArgs.cs" />
+    <Compile Include="Source\ExecutionTimer.cs" />
+    <Compile Include="Source\IAlarmClock.cs" />
+    <Compile Include="Source\ICallbackAlarmClock.cs" />
+    <Compile Include="Source\IResettableTimer.cs" />
+    <Compile Include="Source\IScalableTimer.cs" />
+    <Compile Include="Source\ITimeIntervalFormatter.cs" />
+    <Compile Include="Source\ITimer.cs" />
+    <Compile Include="Source\MinutesSecondsFormatter.cs" />
+    <Compile Include="Source\ResettableExecutionTimer.cs" />
+    <Compile Include="Source\TimePrecision.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Source\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Debug\Debug.csproj">
+      <Project>{26A4878C-6A52-4C6B-9434-9B9384F07649}</Project>
+      <Name>Debug</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Collections\Collections.csproj">
+      <Project>{D504B6D7-9371-4124-8A30-A365447DC4C4}</Project>
+      <Name>Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\Extensions.csproj">
+      <Project>{47C4DDB0-B53C-4343-812A-F80FD5A7F404}</Project>
+      <Name>Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
